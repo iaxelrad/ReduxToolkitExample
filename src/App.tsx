@@ -2,6 +2,7 @@ import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import {Provider} from 'react-redux';
 import Message from './components/Message';
+import Users from './components/Users';
 import {store} from './redux/store';
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <StatusBar barStyle={'dark-content'} />
       <SafeAreaView style={styles.container}>
         <Message />
+        <Users />
       </SafeAreaView>
     </Provider>
   );
