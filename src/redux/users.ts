@@ -3,6 +3,7 @@ import {
   createAsyncThunk,
   createEntityAdapter,
 } from '@reduxjs/toolkit';
+import {RootState} from './store';
 
 interface UserData {
   id: number;
@@ -38,5 +39,13 @@ const usersSlice = createSlice({
     });
   },
 });
+
+export const {
+  selectById: selectUserById,
+  selectIds: selectUserIds,
+  selectEntities: selectUserEntities,
+  selectAll: selectAllUsers,
+  selectTotal: selectTotalUsers,
+} = usersAdapter.getSelectors((state: RootState) => state.users);
 
 export default usersSlice.reducer;
