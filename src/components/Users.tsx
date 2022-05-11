@@ -1,12 +1,12 @@
 import {ActivityIndicator, Button, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 import {fetchUsers, selectAllUsers} from '../redux/users';
-import {RootState} from '../redux/store';
+import {AppDispatch, RootState} from '../redux/store';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 
 const Users = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const {loading} = useSelector((state: RootState) => state.users);
   const users = useSelector(selectAllUsers);
 
